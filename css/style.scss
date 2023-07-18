@@ -1,0 +1,694 @@
+@use '_color';
+@use '_mixin';
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+@font-face {
+    font-family: icomoon;
+    src: url('../fonts/icomoon.eot') ;
+    src: url('../fonts/icomoon.svg') format('svg'),
+         url('../fonts/icomoon.ttf') format('truetype'),
+         url('../fonts/icomoon.woff') format('woff');
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600&family=Roboto:wght@400;500;700&display=swap);
+}
+
+.icomoon{
+    font-family: icomoon;
+    font-size: 24px;
+    color: color.$grafit;
+}
+
+.header{
+    @include mixin.Flex(center, unset, column, none);
+    background-color: color.$lightgreen;
+    &__title{
+        @include mixin.Flex(space-between, center, row, 0);
+        padding: 22px 76px;
+    }
+}
+
+.logo{
+    @include mixin.Flex(center, center, row, 0);
+    &__txt{
+        @include mixin.Roboto(24px, 400, 32px);
+    }
+}
+
+.social{
+    @include mixin.Flex(center, center, row, 24px);
+}
+
+.titel2{
+    @include mixin.Flex(space-between, center, row, 0);
+    padding: 24px 88px 24px 113px;
+    background-color: color.$lightgreen2;
+}
+
+.menu{
+    @include mixin.Flex(center, center, row, 25px);
+    &__item{
+        svg{
+            margin-left: -20px;
+        }
+        &-link, &-link1{
+            @include mixin.Roboto(16px, 400, 24px);
+            color: color.$light-text;
+        }
+
+        &-link1{
+            text-decoration: underline;
+        }
+    }
+}
+
+.contacts{
+    @include mixin.Flex(center, center, row, 31px);
+    @include mixin.Roboto(16px, 400, 24px);
+    color: color.$head-txt;
+}
+
+.present{
+    @include mixin.Flex(center, flex-start, row, 0);
+    background-color: color.$bg-color1;
+    width: 100%;
+    min-width: 100%;
+}
+
+.txt{
+    @include mixin.Flex(center, center, column, 0);
+    margin-left: 179px;
+    z-index: 1;
+
+    h1{
+        @include mixin.Roboto(48px, 500, 56px);
+        color: color.$pres-h1;
+        margin-top: 72px;
+    }
+
+    span{
+        @include mixin.Roboto(48px, 700, 56px);
+        color: color.$pres-span;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    p{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$pres-span;
+        margin-bottom: 16px;
+        white-space: pre-line;
+        text-align: center;
+    }
+}
+
+.btn{
+    @include mixin.Flex(center, center, row, 18px);
+
+    &__start{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$white;
+        background-color: color.$btn-red;
+        border-radius: 32px;
+        border: none;
+        padding: 16px 32px;
+    }
+
+    &__find{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$white;
+        background-color: color.$btn-green;
+        border-radius: 32px;
+        border: none;
+        padding: 16px 32px;
+    }
+}
+
+.img{
+    position: relative;
+    right: 120px;
+}
+
+.steps{
+    @include mixin.Flex(center, center, column, 0);
+
+    h2{
+    margin-top: 80px;
+    @include mixin.Roboto(48px, 500, 56px);
+    color: color.$head-txt;
+    }
+
+    .steps__opt{
+        @include mixin.Roboto(24px, 400, 32px);
+        color: color.$pres-span;
+        margin-top: 16px;
+        margin-bottom: 50px;
+    }
+
+    &__btn{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$health-green;
+        padding: 8px 32px;
+        border-radius: 24px;
+        border: 2px solid color.$health-green;
+        background-color: color.$white;
+        margin-top: 46px;
+        margin-bottom: 25px;
+    }
+}
+
+.items{
+    @include mixin.Flex(center, center, row, 32px);
+    padding: 0 75px;
+}
+
+.block{
+    @include mixin.Flex(center, flex-start, row, 20px);
+    align-self: flex-start;
+
+    .block__num{
+        @include mixin.Roboto(48px, 700, 56px);
+        color: color.$steps_num;
+    }
+}
+
+.text{
+    h3{
+        @include mixin.Roboto(20px, 700, 32px);
+        color: color.$pres-span;
+    }
+
+    .text__h{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$pres-span;
+    }
+
+    .text__p{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$pres-span;
+        margin-top: 16px;
+        width: 80%;
+    }
+}
+
+.recepts{
+    background-image: url(../images/recepts-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 485px;
+    display: flex;
+    justify-content: center;
+}
+
+.block-rec{
+    @include mixin.Flex(center, center, row, 32px);
+    align-self: center;
+}
+
+.info{
+    background-color: color.$white;
+    border-radius: 10px;
+    padding: 15px 15px;
+    position: relative;
+    @include mixin.Flex(center, center, column, none);
+    &__img{
+        border-radius: 10px;
+    }
+    &__title{
+        @include mixin.Roboto(24px, 400, 32px);
+        margin-top: 5px;
+        color: color.$pres-span;
+    }
+    &__title2{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$pres-span;
+        margin-bottom: 16px;
+    }
+    &__review{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$pres-span;
+        text-align: center;
+        white-space: pre-line;
+        margin-bottom: 32px;
+    }
+    &__bottom_line{
+        border-radius: 10px;
+        background-color: color.$health-green;
+        min-height: 8px;
+        max-height: 8px;
+        width: 382px;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.stories{
+    @include mixin.Flex(center, flex-start, row, 136px);
+    padding: 24px 75px;
+}
+
+.description{
+    @include mixin.Flex(center, center, column, none);
+    &__head{
+        @include mixin.Roboto(48px, 400, 56px);
+        color: color.$health-green;
+        margin-bottom: 8px;
+    }
+    &__head2{
+        @include mixin.Roboto(24px, 400, 32px);
+        color: color.$head-txt;
+        margin-bottom: 24px;
+    }
+    &__about{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$head-txt;
+        margin-bottom: 64px;
+        white-space: pre-line;
+    }
+}
+
+.pic{
+    &__img{
+        border: 2px solid color.$health-green;
+        border-radius: 10px;
+    }
+}
+
+.main-feed{
+    @include mixin.Flex(center, center, row, none);
+    position: relative;
+    &__top_line{
+        border-radius: 100px;
+        background-color: color.$health-green;
+        min-height: 4px;
+        max-height: 4px;
+        width: 1216px;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+    }
+    &__bottom_line{
+        border-radius: 100px;
+        background-color: color.$health-green;
+        min-height: 4px;
+        max-height: 4px;
+        width: 1216px;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        margin-top: 25px;
+    }
+}
+
+.feedback{
+    display: grid;
+    justify-items: flex-start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 24px 65px;
+    gap: 65px;
+}
+
+.pers{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 40px;
+}
+
+.storie{
+    &__view{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$head-txt;
+        white-space: pre-line;
+        margin-bottom: 16px;
+    }
+    &__name{
+        @include mixin.Roboto(18px, 500, 24px);
+        color: color.$black;
+        margin-bottom: 8px;
+    }
+    &__lost{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$health-green;
+        margin-bottom: 8px;
+    }
+}
+
+.program{
+    padding: 32px 64px;
+    margin-top: 64px;
+    background-color: color.$health-green12;
+    @include mixin.Flex(center, center, column, none);
+    &__include{
+        @include mixin.Roboto(48px, 400, 56px);
+        color: color.$head-txt;
+        margin-bottom: 16px;
+    }
+    &__plan{
+        @include mixin.Roboto(24px, 400, 32px);
+        color: color.$head-txt;
+        margin-bottom: 32px;
+        white-space: pre-line;
+        text-align: center;
+    }
+}
+
+.contain{
+    @include mixin.Flex(center, center, row, 32px);
+}
+
+.inc{
+    @include mixin.Flex(center, center, column, none);
+    &__span{
+        @include mixin.Roboto(22px, 500, 24px);
+        color: color.$head-txt;
+        margin-top: 24px;
+    }
+    &__p{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$head-txt;
+        margin-top: 16px;
+        white-space: pre-line;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+}
+
+.diet{
+    @include mixin.Flex(center, center, unset, none);
+    margin-top: 56px;
+}
+
+.tbl{
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 1216px;
+}
+
+.th{
+    width: 25%;
+    border: 1px solid color.$blue50;
+    div{
+        padding-top: 16px;
+        padding-bottom: 16px;
+        h3{
+        @include mixin.Roboto(24px, 400, 32px);
+        color: color.$head-txt;
+    }
+        span{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$main-txt;
+    }
+}   
+}
+
+.tbody{
+    &__tr{
+        border: 1px solid color.$blue50;
+        td{
+            border: 1px solid color.$blue50;
+        }
+        .td1_1, .td2_1, .td3_1, .td4_1, .td5_1, .td6_1{
+            @include mixin.Roboto(24px, 400, 32px);
+            color: color.$head-txt;
+            text-align: center;
+        }
+        .td1_2, .td1_3, .td1_4{
+            span{
+                @include mixin.Roboto(16px, 400, 24px);
+            }
+            @include mixin.Roboto(58px, 300, 56px);
+            color: color.$head-txt;
+            text-align: center;
+            padding: 10px 0 14px 0;
+        }
+        .td5{
+            @include mixin.Roboto(16px, 400, 24px);
+            color: color.$head-txt;
+            text-align: center;
+            padding: 12px 0 12px 0;
+        }
+    }
+}
+.btn-tbl{
+    @include mixin.Roboto(16px, 400, 24px);
+    color: color.$health-green;
+    background-color: color.$white;
+    padding: 8px 26px;
+    border: 2px solid color.$health-green;
+    border-radius: 24px;
+}
+
+.tfoot{
+    &__tr{
+        td{
+            border: 1px solid color.$blue50;
+        }
+        .td6{
+            padding: 32px 81px;
+        }
+    }
+}
+
+.top{
+    border-top: 1px solid color.$tabl-line;
+}
+
+.bottom{
+    border-bottom: 1px solid color.$tabl-line;
+}
+
+.left{
+    border-left: 1px solid color.$tabl-line;
+}
+
+.right{
+    border-right: 1px solid color.$tabl-line;
+}
+
+.best-way{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    padding: 75px 75px 0 75px;
+}
+
+.bl{
+    @include mixin.Flex(center, flex-start, row, 16px);
+    padding: 56px 33px;
+    &__txt{
+        margin-top: 16px;
+        span{
+            @include mixin.Roboto(24px, 400, 32px);
+            color: color.$head-txt;
+            padding-bottom: 8px;
+        }
+        p{
+            @include mixin.Roboto(16px, 400, 24px);
+            color: color.$light-text;
+        }
+    }
+}
+
+.subcribe{
+    background-image: url(../images/fruits.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 584px;
+}
+
+.email{
+    @include mixin.Flex(center, flex-start, column, none);
+    &__txt{
+        @include mixin.Flex(center, flex-start, column, none);
+        padding: 59px 65px 21px 72px;
+        background-color: color.$white;
+        border: none;
+        border-radius: 10px;
+        margin-top: 108px;
+        margin-left: 179px;
+    h3{
+        @include mixin.Roboto(24px, 400, 32px);
+        color: color.$health-green;
+        text-align: start;
+    }
+    .sp1{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$light-text;
+    }
+    .sp2{
+        @include mixin.Roboto(12px, 400, 18px);
+        color: color.$head-txt;
+        margin-top: 31px;
+    }
+    .sp3{
+        @include mixin.Roboto(12px, 500, 18px);
+        color: color.$head-txt;
+        margin-bottom: 32px;
+    }
+    input{
+        border: 1px solid color.$btn-border;
+        border-radius: 100px;
+        padding: 8px 164px 8px 16px;
+        background-color: color.$place-bg;
+    }
+    .txt__btn{
+        @include mixin.Flex(center, center, row, 23px);
+        margin-top: 24px;
+        button{
+            @include mixin.Roboto(16px, 400, 24px);
+           padding: 8px 32px; 
+           background-color: color.$health-green;
+           color: color.$white;
+           border-radius: 24px;
+           border: none;
+        }
+        .sp4{
+            @include mixin.Roboto(9px, 400, 24px);
+            color: color.$head-txt;
+        }
+    }
+}
+}
+
+.twitter, .facebook, .instagram, .behance{
+    font-size: 16px;
+    margin-right: 24px;
+}
+
+.coach{
+    @include mixin.Flex(center, center, column, none);
+    padding: 72px 180px 0;
+    &__head{
+        @include mixin.Roboto(48px, 500, 56px);
+        color: color.$head-txt;
+    }
+    &__term{
+        @include mixin.Roboto(24px, 400, 32px);
+        color: color.$light-text;
+        margin-top: 16px;
+        white-space: pre-line;
+        text-align: center;
+    }
+    &__foot{
+        @include mixin.Roboto(24px, 400, 32px);
+        color: color.$light-text;
+        margin-top: 64px;
+        margin-bottom: 72px;
+        text-align: center;
+    }
+}
+
+.face{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.inf{
+    @include mixin.Flex(center, center, row, 25px);
+}
+
+.txt1{
+    &__name{
+        @include mixin.Flex(flex-start, center, row, none);
+        .name__rose{
+            @include mixin.Roboto(18px, 500, 24px);
+            color: color.$health-green;
+            margin-right: 42px;
+        }
+    }
+    &__ceo{
+        @include mixin.Roboto(12px, 700, 18px);
+        color: color.$head-txt;
+        margin-top: 8px;
+    }
+    p{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$light-text;
+        margin-top: 8px;
+        white-space: pre-line;
+    }
+}
+
+.journey{
+    @include mixin.Flex(center, center, row, 16px);
+    background-color: color.$health-green;
+    width: 100%;
+    min-height: 192px;
+    span{
+        @include mixin.Roboto(24px, 700, 32px);
+        color: color.$white;
+    }
+    button{
+        padding: 8px 16px;
+        color: color.$white;
+        border: 2px solid color.$white;
+        border-radius: 24px;
+        background-color: color.$health-green;
+    }
+}
+
+.footer{
+    @include mixin.Flex(center, flex-start, row, 136px);
+    padding: 24px 185px;
+}
+
+.get{
+    &__p1{
+        @include mixin.Roboto(12px, 400, 14px);
+        color: color.$head-txt;
+        white-space: pre-line;
+        margin-bottom: 32px;
+    }
+    &__sp1{
+        @include mixin.Roboto(12px, 400, 18px);
+        color: color.$black;
+    }
+    &__p2{
+        @include mixin.Roboto(12px, 400, 14px);
+        color: color.$main-txt;
+        white-space: pre-line;
+        margin-top: 8px;
+        margin-bottom: 16px;
+    }
+
+button{
+    padding: 8px 16px;
+    border: 2px solid color.$health-green;
+    border-radius: 24px;
+    color: color.$health-green;
+    background-color: color.$white;
+}
+}
+
+.foot-menu{
+    @include mixin.Flex(center, center, row, 48px);
+}
+
+.support, .resources, .about{
+    span{
+        @include mixin.Roboto(16px, 400, 24px);
+        color: color.$main-txt;
+    }
+    ul{
+        margin-top: 24px;
+        li{
+            @include mixin.Roboto(16px, 400, 35px);
+            color: color.$head-txt;
+        }
+    }
+}
